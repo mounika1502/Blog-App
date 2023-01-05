@@ -1,0 +1,22 @@
+
+    <form [formGroup]="postData">
+        <mat-form-field class="post">
+            <input type="text" id="post" matInput name="title" placeholder="Post title" formControlName="post" required="" style="border-top:3em;" >
+        </mat-form-field>
+         <mat-form-field>
+            <textarea rows="5" id="content" matInput name="content" placeholder="Post Content" formControlName="content" required=""></textarea>
+        </mat-form-field>          
+               
+        <input type="text" id="file" #fileUpload multiple formControlName="image" placeholder="+ photo"  required="" class="photo">
+        
+        <!-- <input type="file" id="fileUpload" #fileUpload multiple style="display:none" (change)="onFileChange(fileUpload.files)"> -->
+       
+        <button class="save" type="submit" (click)="movetoPost()" >Save Post</button>
+    </form>
+        
+                          
+     
+
+
+
+

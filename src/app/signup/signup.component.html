@@ -1,0 +1,52 @@
+<mat-sidenav-container class="container">
+<mat-sidenav-content>
+    <div class="content">
+        <div class="toolbar">
+            <mat-toolbar>                 
+                <h1 style="margin-left:22em;margin-top:10px;"><b>WELCOME&nbsp; TO &nbsp;MOUNIKA &nbsp;BLOGS</b></h1> 
+                <div class="box1">
+                  <mat-icon style="color: #697d95;">search</mat-icon>
+                  <mat-icon style="color: #697d95;">bookmark_border</mat-icon>
+                  <mat-icon style="color: #697d95;">mail_outline</mat-icon>                  
+                </div>
+            </mat-toolbar>
+
+        <div class="main">
+    <form class="form" [formGroup]="registerForm">
+    <div class="fname">
+        First Name:<br>
+        <input type="text" formControlName="Firstname" placeholder="Enter your first name" class="box">
+        <span style="color: red;" *ngIf="Firstname && Firstname.invalid && Firstname.touched">Please enter your firstname</span>
+    </div><br>
+    <div class="lname">
+        Last Name:<br>
+        <input type="text" formControlName="Lastname" placeholder="Enter your last name"class="box">
+        <span style="color: red;" *ngIf="Lastname && Lastname.invalid && Lastname.touched">Please enter your lastname</span>
+    </div><br>
+    <div class="mobile">
+        Mobile:<br>
+        <input type="text" formControlName="mobile" placeholder="+91-00000 00000" class="box">
+        <span style="color: red;" *ngIf="mobile && mobile.invalid && mobile.touched">Please enter your mobile number</span>
+    </div><br>
+    <div class="email">
+        Email:<br>
+        <input type="email" formControlName="email" placeholder="Enter your email" class="box">
+        <span style="color: red;" *ngIf="email && email.invalid && email.touched">Please enter your email</span>
+    </div><br>
+    <div class="password">
+        Password:<br>
+        <input type="password" formControlName="password" placeholder="Enter your password" class="box">
+        <span style="color: red;" *ngIf="password && password.invalid && password.touched">Please enter your correct password</span>
+    </div><br>
+    <div class="confirm">
+        Confirm Password:<br>
+        <input type="password" formControlName="confirmpassword" placeholder="Enter your confirm password" class="box">
+        <span style="color: red;" *ngIf="confirmpassword && confirmpassword.invalid && confirmpassword.touched">Please enter your correct password</span>
+    </div>
+    <button class="button"(click)="signup()">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</mat-sidenav-content>
+</mat-sidenav-container>

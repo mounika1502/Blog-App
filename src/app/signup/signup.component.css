@@ -1,0 +1,63 @@
+.form{
+    height: 600px;
+    width: 510px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 45px;
+    margin-left: 30em;
+    margin-top: 5em;
+    background-color: aquamarine;
+    color: blueviolet;
+}
+.box{
+    height: 30px;
+    width: 500px;
+    border-radius: 5px;
+    border: 1px solid burlywood;
+}
+.box1{
+    margin-top: 15px; 
+}
+.email{
+    font-size: 120%;
+}
+.fname{
+    font-size: 120%; 
+}
+.lname{
+    font-size: 120%; 
+}
+.mobile{
+    font-size: 120%;
+}
+.password{
+    font-size: 120%;
+}
+.confirm{
+    font-size: 120%;
+}
+.button{
+    margin-top: 5em;
+    height: 40px;
+    width: 510px;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgb(72, 23, 118);
+    color: white;
+}
+mat-sidenav-content{
+    height: 100vh;
+    background:rgb(174, 234, 234);   
+}
+/* .main{
+    margin-left: 30px;
+} */
+mat-toolbar{
+    justify-content: space-between;
+}
+mat-icon{
+    margin-left: 10px;
+    color :white;    
+}
+
+    

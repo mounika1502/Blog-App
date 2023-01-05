@@ -1,0 +1,46 @@
+.app-componet{
+    width: 98%;
+}
+.main-box{
+    height: 650px;
+    background-color: #0f172a;
+    width: 65px;
+    overflow: hidden;
+}
+.main-box:hover{
+    width: 215px;
+    transition: 0.3s;
+}
+.menu-items{
+    list-style: none;
+    line-height: 60px;
+    padding-left: 0px;
+    height: 100%;
+}
+.menu-items li{
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 25px;
+    display: flex;
+}
+.menu-items li:hover{
+    background-color: white;
+    color: #7d7d7d;
+}
+.onActive{
+    color: #fcfcfc;
+    background-color: rgba(50,150,233,0.692);
+}
+.menu-items li i{
+    margin-left: 25px;
+    font-size: 26px;
+    margin: 0px 20px 0px 0px;
+    position: relative;
+    top: 15px;
+}
+.tabs{
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-top: 50px;
+}

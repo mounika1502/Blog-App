@@ -1,0 +1,58 @@
+<br>
+<button class="add" type="submit" routerLink="/posts"><b>Add new post</b></button> 
+<br><br>
+<div *ngIf="total.length > 0">     
+    
+    <div *ngIf="!edit">        
+        
+        <div *ngFor="let post of total">
+        <div class="box">
+            <div class="pos">
+              <h4 class="po"><b>{{post.post}}</b></h4>
+            </div>
+            <div class="content"> 
+              <h5 class="po">{{post.content}}</h5> 
+            </div>               
+                <img class="img" [src]="post.image" height="260px"/><br>
+
+            <form [formGroup]="comData">
+                <div class="com"><h4> &nbsp;<b>Comments...</b></h4>
+                       
+                <!-- <hr style="margin-top:-2em;"><i class="fa fa-trash-o" style="margin-left:45em; color: red; margin-top: -20%;"></i> -->
+                <div *ngFor="let postss of post.Comment">
+                    <hr> {{postss.comment}}  
+                </div>
+
+                <input type="text" id="comment" placeholder="Add comment...." class="comment"  formControlName="comment" >
+                <button class="btn" (click)="comPost(post)"><b>Send</b></button> 
+                </div>   
+                <!--(click)="updatePost(post.id,'comment')"-->
+            </form>
+
+            <div class="time">
+                {{OrderTime}}            
+                 <!--here i am use some angular tools such as ngClass to add dynamic class based on user clicked.
+                 Also it will be done in one function based on the condition of the user has already liked the button or not. [style.color]="err?'black':'red'" -->
+                <button type="button"class="bt"  [ngClass]="{'like' : isLiked}"  (click)="like(post)"><i class="fa fa-heart " [style.color]="err?'black':'red'"></i> | <span class="like-counter">{{post.like}}</span></button>               
+                <button mat-button color="primary" (click)="editData()">Edit Post</button>
+                <button mat-button color="warn" (click)="deleteData(post.id)">Delete Post</button>    
+            </div>
+         </div>        
+        </div>
+    </div>
+
+        
+
+    <!-- below code is for the edit page     -->
+    <form [formGroup]="postData" *ngIf="edit ">
+        <input type="text" id="post" matInput name="title" placeholder="Post title" formControlName="post" required="" class="post">
+        <div>
+            <input  id="content" matInput name="content" placeholder="Post Content" formControlName="content" required="" class="con">
+        </div>          
+            <button class="btt" type="submit"  (click)="updatePost(postData.controls['id'].value,'update')"><b>Update Post</b></button>
+        </form>       
+      
+    <p *ngIf="total.length <=0">No posts Available!</p>
+    </div>
+
+

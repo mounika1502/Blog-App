@@ -1,0 +1,48 @@
+.head{
+    margin-top: 5em;
+    margin-left: 6em;
+    color: rgb(216, 76, 127);
+}
+.img{
+    float: right;
+    margin-right: 8em;
+    width: 40%;
+}
+.box{
+    height: 230px;
+    width: 10px;
+    background-color: black;
+    margin-left: 15em;
+    margin-top: -15em;
+}
+.pavan{
+    margin-left: 7em;
+    color: blue;
+    margin-top: 3em;
+}
+.rahul{
+    margin-left: 7em;
+    color: rgb(235, 62, 19);
+    margin-top: 1em;
+    margin-left: 16em;
+}
+.mani{
+    margin-left: 7em;
+    color: rgb(7, 128, 63);
+    margin-top: 3em;
+    margin-left: 5.2em;
+}
+.dir1{
+    margin-left: 12.1em;
+}
+.dir2{
+    margin-left: 16em;
+}
+.dir3{
+    margin-left: 10.7em;
+}
+.box{
+    height: 200px;
+    border: 1px solid black;
+}
+

@@ -1,0 +1,45 @@
+.form{
+    border: 1px solid black;
+    height: 250px;
+    width: 370px;
+    padding: 15px;
+    align-items: center;
+    margin-left: 35em;
+    margin-top: 12em;
+    border-radius: 5px;
+}
+mat-sidenav-content{
+    height: 100vh;
+    background:rgb(174, 234, 234);   
+}
+.main{
+    margin-left: 30px;
+}
+mat-toolbar{
+    justify-content: space-between;
+}
+mat-icon{
+    margin-left: 10px;
+    color :white;    
+}
+.box{
+    margin-top: 15px; 
+}
+.email{
+    height: 30px;
+    width: 300px;
+    margin-top: -4em;
+    border-radius: 5px;
+    border: 1px solid rgb(175, 156, 156);
+    color: blueviolet;
+}
+.login{
+    color: white;
+    background-color: rgb(86, 86, 168);
+    border: 0;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    margin-left: 10em;
+    margin-top: 3em;
+}

@@ -1,0 +1,16 @@
+<section class="app-component">
+   <div class="row">
+      <div class="col-lg-2">
+         <div class="main-box">
+         <div class="side-menu-list">
+            <ul class="menu-items">
+               <li (click)="goTo('Home')" [ngClass]="{'onActive':selectedMenu == 'Home'}"><i class="fa fa-home" routerLink="/dashboard"></i>Home</li>
+               <li (click)="goTo('Posts')" [ngClass]="{'onActive':selectedMenu == 'Posts'}"><i class="fa fa-home" routerLink="/postlist"></i>Posts</li>
+               <li (click)="goTo('Profile')" [ngClass]="{'onActive':selectedMenu == 'Profile'}"><i class="fa fa-home" routerLink="/admin"></i>Profile</li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   </div>
+
+</section>
