@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "@ionic/angular": "^6.4.1",
     "@types/react-leaflet": "^2.8.2",
     "aws-s3-upload-ash": "^1.1.4",
     "font-awesome": "^4.7.0",
