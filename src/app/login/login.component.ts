@@ -11,8 +11,8 @@ export class LoginComponent implements OnInit{
   displayError:any
 
   loginForm=[];
-  data=[];
-  List=[];
+  data:any=[];
+  List:any=[];
 
   user:any={};
   
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit{
     this.data = JSON.parse(localdata)
     console.log(this.data);
   }
-  this.List = this.data.filter((item:any) => item.email === data.value.emal && item.password == data.value.password);
+  this.List = this.data.filter((item:any) => item.email === data.value.email && item.password == data.value.password);
   localStorage.setItem('Login',JSON.stringify(this.List))
   if(this.List.length==0)
   {
@@ -48,10 +48,10 @@ export class LoginComponent implements OnInit{
   })
     }
     else{
-      window.location.href="/"
+      window.location.href="/postlist"
     }
-     console.log(this.form.value)
-     this.user = Object.assign(this.user, this.form.value);
+    //  console.log(this.form.value)
+    //  this.user = Object.assign(this.user, this.form.value);
     //  this.addUser(this.user);
    
   //  addUser(user: any) {
@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit{
   //     users = [user];
   //   }
    
-     localStorage.setItem('Users',JSON.stringify(this.user));
+     
    }
   }
 }

@@ -31,7 +31,7 @@
                             [displayError]="isFieldValid('password')" errorMsg="Please enter your correct password">  [ngClass]="displayFieldCss('password')"</app-field-error-display> -->
                             <!-- <span style="color: red;" *ngIf="password && password.invalid && password.touched"><br>Please enter your password</span><br> -->
                         </div>
-                            <button type="login" class="login" [disabled]="!form.valid" routerLink="/" (click)="post(data)">LOG IN</button>                                      
+                            <button type="login" class="login"   (click)="post(form)">LOG IN</button>                                      
                     </div>
                 </form>                 
             </div>
@@ -39,4 +39,6 @@
     </div>
     </mat-sidenav-content>
  </mat-sidenav-container>
- 
+ <div *ngFor="let data of List">
+
+ </div>

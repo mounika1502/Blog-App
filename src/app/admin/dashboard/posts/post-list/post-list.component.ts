@@ -26,10 +26,11 @@ export class PostListComponent  implements OnInit{
   comm:any 
   total:any=[];
   mouni:any=[];
-  
+  setting:any;
   
   comData = new FormGroup({
 		comment : new FormControl(""),
+    commentName:new FormControl("")
     // id:new FormControl(1)
 	})
 
@@ -83,6 +84,10 @@ export class PostListComponent  implements OnInit{
 	   }
   }
 
+  toggle(){
+    this.setting=!this.setting
+  }
+
   //post the comments here
   like(post:any){
     debugger
@@ -113,34 +118,30 @@ const likeddata=this.total.find((m:{id:any;})=>m.id==post.id)
     //after finding matching post find the key with comments and push new comment to the comments key array
     
     localStorage.setItem('comments',JSON.stringify(this.comData.value))
+
     
     var pos =JSON.parse(localStorage.getItem('posts') || '{}')
-    pos.forEach((item: { id: any;Comment:any}) =>{
-      this.comm =JSON.parse(localStorage.getItem('comments') || '{}')
-      this.mouni.push(this.comm)
-      if(data.id == item.id){  //data.id is the each post id,and item.id is total posts array of id      
-        // this.comm =JSON.parse(localStorage.getItem('comments') || '{}')
-        // this.mouni.push(this.comm)
-        console.log(this.mouni)
-        const isdata =localStorage.getItem('allcomments')   //we created a allcomments key in localstorage
-        if(isdata == null){      //if allcomments array is empty then the comments of mouni array is going to allcomments
-          localStorage.setItem('allcomments',JSON.stringify(this.mouni))
-        }else{                    //
-          const olddata =JSON.parse(isdata)
-          for(let i=0;i<this.mouni.length;i++){
-            var sample =this.mouni[i]
-          }
-          olddata.push(sample)  
-          console.log(olddata)        
-          localStorage.setItem('allcomments',JSON.stringify(olddata))
-        }
-        const getda = JSON.parse(localStorage.getItem('allcomments') || '{}')
-        console.log(getda)
-    
-        // this. mouni = item.Comment
+    var logForm = JSON.parse(localStorage.getItem('Login') || '{}')
+    for(let i=0;i<logForm.length;i++){
+      var Firstname=logForm[i].Firstname
+      var Lastname=logForm[i].Lastname
+    }
+    console.log(Firstname)
+    console.log(Lastname)
+       this.comData.patchValue({
+        commentName:Firstname
+       })
+       this.comm =JSON.parse(localStorage.getItem('comments') || '{}')
+
+       pos.forEach((item: { id:any;Comment:any}) =>{
+      
+      if(data.id == item.id){  //data.id is the each post id,and item.id is total posts array of id       
         
-        item.Comment = getda      //here Comment is array of posts we pass the getda array into Comments array
-      }
+        const logForm = JSON.parse(localStorage.getItem('Login') || '{}')
+        console.log(logForm)
+        
+        item.Comment.push(this.comm)     //here Comment is array of posts we pass the getda array into Comments array
+    }
       localStorage.setItem('posts',JSON.stringify(pos));
       console.log(pos)   
     })
@@ -149,6 +150,7 @@ const likeddata=this.total.find((m:{id:any;})=>m.id==post.id)
   //   this.commentPost.push(this.comment)
     console.log(this.comData.value)
    }
+   
 
   //deleting the data   
   deleteData(id:any){

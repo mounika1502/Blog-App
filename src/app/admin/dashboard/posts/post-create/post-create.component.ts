@@ -1,6 +1,6 @@
 import { DatePipe, formatCurrency } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import * as AWS from 'aws-sdk';
 import * as S3 from 'aws-sdk/clients/s3';
 // import { LoginService } from '../Shared/login.service';
@@ -63,7 +63,8 @@ export class PostCreateComponent implements OnInit{
     post : new FormControl(""),
     content : new FormControl(""),
     image : new FormControl(""),
-    Comment:new FormControl([]),
+    Comment:new FormArray([]),
+    commentName:new FormControl(""),
     id:new FormControl(1)
   });
  

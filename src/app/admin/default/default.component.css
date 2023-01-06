@@ -38,3 +38,14 @@ mat-icon{
     height: 25px;
     width: 70px;
 }
+.home{
+    margin-right: 1em;
+    cursor: pointer;
+}
+.blog{
+    margin-right: 1em;
+    cursor: pointer;
+}
+.profile{
+    cursor: pointer;
+}

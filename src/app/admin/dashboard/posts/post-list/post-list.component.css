@@ -1,11 +1,12 @@
 .comment{
-    width: 50%;
+    width: 45%;
     height: 2.5em;
     border-radius: 5px;
-    margin-top: 10.5em;
     border: 0;
     background-color: rgb(234, 224, 224);
-    margin: 10px;
+    margin: 6px;
+    float: left;
+    margin-top: 4.8em;
 }
 .btt{
     background-color: rgb(100, 37, 158);
@@ -25,10 +26,10 @@
     width: 50px;
     border: 0;
     background-color: rgb(108, 45, 167); 
-    margin-top: -3em;   
-    margin-left:40em; 
+    margin-top: 4.8em;   
     margin-bottom: 2em;
-    float: left;  
+    margin-right: 2.9em;
+    float: right;  
 }
 .post{
    margin-right: 8px;
@@ -40,11 +41,12 @@
 }
 .content{
     width: 50%;
-    height: 7em;
+    height: 3em;
     border-radius: 5px;
     margin-top: 1em;
     border: 0; 
-    margin: 1%;   
+    margin: 6px;  
+    float: left; 
 }
 .con{
     width: 1250px;
@@ -89,10 +91,12 @@
  }
 
  .img{
-    margin-top: -11em;
-    margin-bottom: 0em;
-    float: right;
-    margin-right: 2em;
+    margin-top: 0em;
+    float: left;
+    margin-right: 0.5em;
+    height: 35em;
+    width: 35em;
+
  }
  .add{
     background: rgb(15, 102, 184);
@@ -106,35 +110,51 @@
     margin-bottom: -6em;
 }
 .box{    
-    border: 1px solid black;
-    height:25em;
+    height:35em;
+    width: 80em;
     margin-top: 0.5em;
     background-color: white;
-    margin-right: 2px;
-    margin-left: -1.5em;
+    margin-left: 10.5em;
     border-radius: 5px;
+    margin-bottom: 1.5em;
 }
 .pos{    
-    width:50%;
+    width:25em;
     margin-top: 1px;
     border-radius: 5px;
-    margin: 1%;
+    margin: 6px;
+    float: left;
 }
 .po{
-    margin: 10px;
+    margin: 6px;
+    width:25em;
 }
-.com{
-    margin-top: -5em;
-    margin-left: 10px;
-    /* margin-bottom: 3.8em; */
-    height:12em ;
+.com{    
+    margin: 4px;
     width:50%;
+    float: left;
+}
+.mouni{
+    height:8em ;
+    width: 40em;
     overflow-y: scroll;
+    margin: 6px;
 }
 .class{
     border-radius: 5px;
     margin-top: 2px;
     border: 1px solid black;    
+}
+.dots{
+    float: right;
+    margin-right: 3em;
+    margin-top: 1em;
+}
+.setting{
+    border: 1px solid black;
+    height: 5em;
+    width: 5em;
+    background-color: blueviolet;
 }
 
 

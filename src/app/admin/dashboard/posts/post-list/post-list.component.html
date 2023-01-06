@@ -7,33 +7,51 @@
         
         <div *ngFor="let post of total">
         <div class="box">
+            <img class="img" [src]="post.image" height="260px"/><br>
+            
             <div class="pos">
               <h4 class="po"><b>{{post.post}}</b></h4>
             </div>
+            <div class="dots" (click)="toggle()">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </div>
+            <table *ngIf="setting" matSort>
+                <button>edit</button>
+                <button>delete</button>
+            </table>
+            
+
+            
             <div class="content"> 
               <h5 class="po">{{post.content}}</h5> 
-            </div>               
-                <img class="img" [src]="post.image" height="260px"/><br>
+            </div>                
 
             <form [formGroup]="comData">
-                <div class="com"><h4> &nbsp;<b>Comments...</b></h4>
-                       
-                <!-- <hr style="margin-top:-2em;"><i class="fa fa-trash-o" style="margin-left:45em; color: red; margin-top: -20%;"></i> -->
-                <div *ngFor="let postss of post.Comment">
-                    <hr> {{postss.comment}}  
-                </div>
-
                 <input type="text" id="comment" placeholder="Add comment...." class="comment"  formControlName="comment" >
                 <button class="btn" (click)="comPost(post)"><b>Send</b></button> 
-                </div>   
+                
+                <div class="com"><h4> &nbsp;<b>Comments...</b></h4></div>
+                       
+                <hr style="float: left;">
+                <div class="mouni"> 
+                <div *ngFor="let postss of post.Comment">
+                   
+                    &nbsp;&nbsp;<i class="fa fa-user-circle-o"></i>{{post.commentName}} &nbsp;&nbsp;&nbsp;{{OrderTime}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{postss.comment}}
+                    <br><hr>
+                </div>  
+                </div>
+
+                
+                   
                 <!--(click)="updatePost(post.id,'comment')"-->
             </form>
 
             <div class="time">
-                {{OrderTime}}            
+                          
                  <!--here i am use some angular tools such as ngClass to add dynamic class based on user clicked.
                  Also it will be done in one function based on the condition of the user has already liked the button or not. [style.color]="err?'black':'red'" -->
-                <button type="button"class="bt"  [ngClass]="{'like' : isLiked}"  (click)="like(post)"><i class="fa fa-heart " [style.color]="err?'black':'red'"></i> | <span class="like-counter">{{post.like}}</span></button>               
+                <!-- <button type="button"class="bt"  [ngClass]="{'like' : isLiked}"  (click)="like(post)"><i class="fa fa-heart " [style.color]="err?'black':'red'"></i> | <span class="like-counter">{{post.like}}</span></button>                -->
                 <button mat-button color="primary" (click)="editData()">Edit Post</button>
                 <button mat-button color="warn" (click)="deleteData(post.id)">Delete Post</button>    
             </div>

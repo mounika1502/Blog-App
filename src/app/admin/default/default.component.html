@@ -1,17 +1,20 @@
 <mat-sidenav-container class="container">
-    <mat-sidenav #sidebar mode='side' opened>
+    <!-- <mat-sidenav #sidebar mode='side' opened>
         
         <app-sidebar></app-sidebar>
-    </mat-sidenav>
+    </mat-sidenav> -->
     
     <mat-sidenav-content>
     <div class="content">
         <div class="toolbar">
             
-            <mat-toolbar> 
+            <mat-toolbar>
+                <div class="home" routerLink="/dashboard">HOME</div>
+                <div class="blog" routerLink="/postlist">BLOGS</div>
+                <div class="profile" routerLink="/admin">PROFILE</div> 
 
-                <mat-icon (click)='sidebar.toggle()' style="color:#697d95;">menu</mat-icon> 
-                <img src="assets/logo2.png" style="height: 60px; margin-left:16em;">
+                <!-- <mat-icon (click)='sidebar.toggle()' style="color:#697d95;">menu</mat-icon>  -->
+                <img src="assets/logo2.png" style="height: 60px; margin-left:14em;">
                 <h1 style="margin-top:10px; margin-left:1em;"><b>WELCOME&nbsp; TO &nbsp;MOUNIKA &nbsp;BLOGS</b></h1>
                 <button class="log" routerLink="/login">Log out</button> 
                 <div class="box">
