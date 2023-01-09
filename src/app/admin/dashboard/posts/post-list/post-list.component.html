@@ -15,9 +15,9 @@
             <div class="dots" (click)="toggle()">
                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
             </div>
-            <table *ngIf="setting" matSort>
-                <button>edit</button>
-                <button>delete</button>
+            <table *ngIf="setting" matSort class="settings" class="del">
+                <button ><i class="fa fa-trash-o"></i></button><br>
+                <button ><i class="fa fa-pencil-square-o"></i></button>
             </table>
             
 

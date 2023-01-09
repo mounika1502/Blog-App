@@ -26,8 +26,7 @@ export class LoginComponent implements OnInit{
     this.form = this.formBuilder.group({
       email: new FormControl('',[Validators.required,Validators.email]),
       password: new FormControl('',[Validators.required,Validators.minLength(8),Validators.maxLength(12)])
-    })   
-    
+    })    
   }
 
    post(data:any)
@@ -49,22 +48,7 @@ export class LoginComponent implements OnInit{
     }
     else{
       window.location.href="/postlist"
-    }
-    //  console.log(this.form.value)
-    //  this.user = Object.assign(this.user, this.form.value);
-    //  this.addUser(this.user);
-   
-  //  addUser(user: any) {
-  //   let users = [];
-  //   if(localStorage.getItem('Users')){
-  //     // users = JSON.parse(localStorage.getItem('Users'));
-  //     users = [user, ...users];
-  //   }
-  //   else
-  //   {
-  //     users = [user];
-  //   }
-   
+    }  
      
    }
   }
