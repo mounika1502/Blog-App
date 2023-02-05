@@ -38,11 +38,7 @@
         <input type="password" formControlName="password" placeholder="Enter your password" class="box">
         <span style="color: red;" *ngIf="password && password.invalid && password.touched">Please enter your correct password</span>
     </div><br>
-    <div class="confirm">
-        Confirm Password:<br>
-        <input type="password" formControlName="confirmpassword" placeholder="Enter your confirm password" class="box">
-        <span style="color: red;" *ngIf="confirmpassword && confirmpassword.invalid && confirmpassword.touched">Please enter your correct password</span>
-    </div>
+    
     <button class="button"(click)="signup()">Submit</button>
 </form>
 </div>

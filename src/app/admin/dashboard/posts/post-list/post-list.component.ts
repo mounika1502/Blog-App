@@ -40,28 +40,16 @@ export class PostListComponent  implements OnInit{
     image : new FormControl(""),    
     id: new FormControl(1),
     like:new FormControl("")
-  }) 
- 
-  
-  // postArray: any;
-  // tabkey: any;
-  // tabvalue: any;
-
+  })
   
 
   //like button function
-  likeCount=0;
-  isLiked=false;
-  err=true;
- //it is used like toggle function  to like and dislike
   
-
-  // getdata(){
-  //   this.postArray.forEach((element:any)=>{
-  //     this.tabkey=Object.keys(element);
-  //     this.tabvalue?.push(Object.values(element));
-  //   });
-  // }
+  likesCounter:boolean = true;
+  dislikeCounter:boolean = true;
+  
+  
+ 
 
 //for date and time display
   constructor(private datepipe:DatePipe){                   
@@ -83,32 +71,52 @@ export class PostListComponent  implements OnInit{
 		 this.comments.push(JSON.parse(this.data))
 	   }
   }
-
+ 
   toggle(){
     this.setting=!this.setting
   }
 
-  //post the comments here
-  like(post:any){
-    debugger
-    var pos =localStorage.getItem('posts')
-    if(pos !=null)
-    {
-    this.data=JSON.parse(pos)
+  //like and dislike function
+  likeButtonClick(data:any) {
+    if (this.likesCounter === true && this.dislikeCounter === true) {
+       data.likeCount++;
+      //this.numberOfLikes++;
+      this.likesCounter = false;
+    } else if (this.likesCounter === true && this.dislikeCounter === false) {
+     // this.numberOfLikes++;
+      data.likeCount++;
+      this.likesCounter = false;
+      //this.numberOfDislike--;
+      data.dislikecount--;
+      this.dislikeCounter = true;
+    } else if (this.likesCounter === false && this.dislikeCounter === true) {
+      //this.numberOfLikes--;
+      data.likeCount--;
+      this.likesCounter = true;
     }
-const likeddata=this.total.find((m:{id:any;})=>m.id==post.id)
+  }
+  dislikeButtonClick(data:any) {
+    if (this.dislikeCounter === true && this.likesCounter === true) {
+      //this.numberOfDislike++;
+      data.dislikecount++;
+      this.dislikeCounter = false;
+    } else if (this.dislikeCounter === true && this.likesCounter === false) {
+      //this.numberOfDislike++;
+      //this.numberOfLikes--;
+      data.dislikecount++;
+      data.likeCount--;
+      this.dislikeCounter = false;
+      this.likesCounter = true;
+    } else if (this.dislikeCounter === false && this.likesCounter === true) {
+      //this.numberOfDislike--;
+      data.dislikecount--;
+      this.dislikeCounter = true;
+    }
+  }
 
 
-   this.likeCount=post.like
-    this.likeCount++
-   
-    
-     likeddata.like=this.likeCount;
-     this.data.splice(post.id,1);
-     this.data.push( likeddata)
-     
-     localStorage.setItem('posts',JSON.stringify(this.data) )
-  }  
+  //post the comments here
+ 
   comPost(data:any){
     
     //in the comments key i will store my comments

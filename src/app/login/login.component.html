@@ -20,16 +20,12 @@
                     <div class="form">
                         <div class="mail" style="color: rgb(26, 26, 150);" ><h3>E-mail :</h3>
                             <input type="email" class="email" placeholder="Enter your email" name= "email" formControlName="email">
-                            <!-- <app-field-error-display 
-                            [displayError]="isFieldValid('email')" errorMsg="Please enter your email"> [ngClass]="displayFieldCss('email')</app-field-error-display> -->
-                            <!-- <span style="color: red;" *ngIf="email && email.invalid && email.touched"><br>email is invalid</span> -->
+                            
                         </div>                 
                         <br>                            
                         <div class="mail" style="color:rgb(26, 26, 150) ;"><h3>Password :</h3>
                             <input type="password" class="email" placeholder="Password" formControlName="password">
-                            <!-- <app-field-error-display 
-                            [displayError]="isFieldValid('password')" errorMsg="Please enter your correct password">  [ngClass]="displayFieldCss('password')"</app-field-error-display> -->
-                            <!-- <span style="color: red;" *ngIf="password && password.invalid && password.touched"><br>Please enter your password</span><br> -->
+                            
                         </div>
                             <button type="login" class="login"   (click)="post(form)">LOG IN</button>                                      
                     </div>

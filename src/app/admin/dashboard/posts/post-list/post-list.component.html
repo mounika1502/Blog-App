@@ -8,7 +8,6 @@
         <div *ngFor="let post of total">
         <div class="box">
             <img class="img" [src]="post.image" height="260px"/><br>
-            
             <div class="pos">
               <h4 class="po"><b>{{post.post}}</b></h4>
             </div>
@@ -16,10 +15,9 @@
                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
             </div>
             <table *ngIf="setting" matSort class="settings" class="del">
-                <button ><i class="fa fa-trash-o"></i></button><br>
-                <button ><i class="fa fa-pencil-square-o"></i></button>
-            </table>
-            
+                <button ><i class="fa fa-trash-o" (click)="deleteData(post.id)"></i></button><br>
+                <button ><i class="fa fa-pencil-square-o" (click)="editData()"></i></button>
+            </table>           
 
             
             <div class="content"> 
@@ -50,10 +48,11 @@
             <div class="time">
                           
                  <!--here i am use some angular tools such as ngClass to add dynamic class based on user clicked.
-                 Also it will be done in one function based on the condition of the user has already liked the button or not. [style.color]="err?'black':'red'" -->
-                <!-- <button type="button"class="bt"  [ngClass]="{'like' : isLiked}"  (click)="like(post)"><i class="fa fa-heart " [style.color]="err?'black':'red'"></i> | <span class="like-counter">{{post.like}}</span></button>                -->
-                <button mat-button color="primary" (click)="editData()">Edit Post</button>
-                <button mat-button color="warn" (click)="deleteData(post.id)">Delete Post</button>    
+                 Also it will be done in one function based on the condition of the user has already liked the button or not <i class="fa fa-heart " [style.color]="err?'black':'red'"></i> -->
+                 <button type="button"class="bt" (click)="likeButtonClick(post)" [ngClass]="likeCounter ? 'like-button' : 'liked'">Like | {{post.likeCount}} </button>
+                 <button (click)="dislikeButtonClick(post)" [ngClass]="dislikeCounter ? 'dislike-button' : 'disliked'"> Dislike | {{post.dislikecount}} </button>               
+                <!-- <button mat-button color="primary" (click)="editData()">Edit Post</button>
+                <button mat-button color="warn" (click)="deleteData(post.id)">Delete Post</button>     -->
             </div>
          </div>        
         </div>

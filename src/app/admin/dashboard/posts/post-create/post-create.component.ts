@@ -65,7 +65,9 @@ export class PostCreateComponent implements OnInit{
     image : new FormControl(""),
     Comment:new FormArray([]),
     commentName:new FormControl(""),
-    id:new FormControl(1)
+    id:new FormControl(1),
+    likeCount:new FormControl('1'),
+    dislikecount:new FormControl('1')
   });
  
  //posting the data to localstorage
@@ -89,32 +91,6 @@ export class PostCreateComponent implements OnInit{
       timer: 1500
     })  
   }
-
-//   //aws s3 bucket
-//  onFileChange(files: any) {
-//     for (let index = 0; index<files.length;index++) { 
-//     console.log ("inside loop")
-//     const file = files[index];
-//     files.push({data:"files", inprogress:"false",onprogress:0});
-//     }
-//     this.files.forEach(file =>{
-//       this.uploadFile(files)
-//     });
-//   }
-//  //AWS se bucket function
-//   uploadFile(files:any) {
-//     var params = { Bucket: 'mycloudbox1', Key: this.userid+'/images/'+files.data.name, Expires: 3600,ContentType:files.data.type };
-//     var url=this.bucket.getSignedUrl('putObject',params);
-//      this.http.put<any>(url, files.data).subscribe({
-//       next: data =>{ console.log(data);},        
-//         // console.log(files.data.name +"image uploaded successfully");      
-//       error: error => {console.error('There was an error!', error)
-//       alert(JSON.stringify(error))
-//       }
-//      });
-
-
-//   }
 
 
 }
